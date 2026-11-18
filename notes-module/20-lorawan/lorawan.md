@@ -75,6 +75,103 @@ The gateway acts as a bridge between the LoRa radio network and the internet.
 It receives LoRa messages from multiple devices and forwards them to the network server.
 - An important distinction: the gateway does not normally interpret the application data. That is handled further along the network.
 
+**3. Network Server**
+The Network Server manages the LoRaWAN network.
+
+Its responsibilities include:
+* Managing device communication.
+* Checking message integrity and security.
+* Handling duplicate messages received by multiple gateways.
+* Managing message routing.
+
+**4. Application Server**
+
+The Application Server handles application-level data and makes it available to applications through integrations and APIs.
+
+**5. Applications**
+
+These are the interfaces used to view or process the information.
+
+For example, a dashboard could display:
+
+| Sensor | Reading |
+| --- | --- |
+| Temperature | 25.4°C |
+| Humidity | 60% |
+| CO₂ | 420 ppm |
+
+
+### Understanding the complete program flow
+Lab Exercise 
+
+```bash
+iotsuwo-hs-2026-course-main-lora/
+│
+└── lora/
+    │
+    ├── README.md
+    │
+    └── lora-grove-extension-board/
+        │
+        ├── libraries/
+        │   ├── Adafruit_CCS811-master/
+        │   ├── Adafruit_Si7021-master/
+        │   └── arduino-lmic-master/
+        │
+        └── ttn-otaa/
+            └── ttn-otaa.ino
+```
+
+
+Configure an Arduino LoRaWAN device, connect it to The Things Stack, collect environmental sensor readings and successfully transmit the readings to the TTN application.
+
+
+<img src="img/lab_exe_implementation.png" alt="Complete Lab Exercise Implementation" width="600">
+
+_What you need before starting_
+
+Hardware
+
+* Arduino Uno.
+* LoRa development board / Grove LoRa extension board.
+* Si7021 temperature and humidity sensor.
+* CCS811 CO₂ sensor.
+* USB cable.
+* Computer.
+
+Software
+- Arduino IDE.
+- The Things Stack (TTN) account.
+- Arduino LMIC library.
+- Adafruit CCS811 library.
+- Adafruit Si7021 library.
+
+
+Navigate to:
+
+```bash
+lora/
+  lora-grove-extension-board/
+    ttn-otaa/
+      ttn-otaa.ino
+```
+
+Open `ttn-otaa.ino` using Arduino IDE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
